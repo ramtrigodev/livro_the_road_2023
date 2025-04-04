@@ -1,5 +1,32 @@
 import * as React from 'react'
 
+
+
+function App() {
+  // const title = 'React';
+  return (
+    <div>
+      <h1>
+        Teste React
+      </h1>
+      <Procurar />
+
+
+      <hr />
+
+      <Listar />
+    </div>
+  );
+}
+function Procurar() {
+  return (
+    <div>
+      <label htmlFor='procurar'>Procurar</label>
+      <input id="procurar" type="text" />
+    </div>
+  )
+
+}
 const lista = [
   {
     titulo: 'React',
@@ -19,43 +46,23 @@ const lista = [
   },
 ]
 
-
-function App() {
-  // const title = 'React';
+function Listar() {
   return (
-    <div>
-      <h1>
-        Teste React
-      </h1>
-
-      <label htmlFor='procurar'>Procurar</label>
-      <input id="procurar" type="text" />
-
-      <hr />
-
-      <ul>
-        {lista.map(function (item) {
-          return <li key={item.id}>
+    <ul>
+      {lista.map(function (item) {
+        return (
+          <li key={item.id}>
             <span>
               <a href={item.url}>{item.titulo}</a>
             </span>
-            <span>
-              {item.autor}
-            </span>
-            <span>
-              {item.comentarios}
-            </span>
-            <span>
-              {item.pontos}
-            </span>        
-            
-               {item.titulo}</li>; 
-        })}
-      </ul>
-
-    </div>
+            <span>{item.autor}</span>
+            <span>{item.comentarios}</span>
+            <span>{item.pontos}</span>
+          </li>
+        );
+      })}
+    </ul>
   );
 }
-
 
 export default App
