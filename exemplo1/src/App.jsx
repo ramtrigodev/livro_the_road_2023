@@ -20,28 +20,26 @@ const lista = [
 ]
 
 
-
-const bemvindo = {
-  saudacao: 'Oi',
-  title: 'React',
-};
-
 function App() {
- // const title = 'React';
+  // const title = 'React';
   return (
     <div>
       <h1>
-
-          {bemvindo.saudacao}
-          {bemvindo.title}
+        Teste React
       </h1>
 
       <label htmlFor='procurar'>Procurar</label>
-      <input id="procurar" type="text"/>
+      <input id="procurar" type="text" />
+
+      <hr />
+
+      <ul>
+        {lista.map(function (item) {
+          return <li>{item.titulo}</li>;
+        })}
+      </ul>
 
     </div>
-
-
   );
 }
 
