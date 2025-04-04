@@ -11,7 +11,7 @@ const lista = [
   },
   {
     titulo: 'React Native',
-    url: 'https://reactjs.org/',
+    url: 'https://reactjs.org/ ',
     autor: 'Pedro Muniz Trigo',
     comentarios: 2,
     pontos: 5,
@@ -35,7 +35,21 @@ function App() {
 
       <ul>
         {lista.map(function (item) {
-          return <li>{item.titulo}</li>;
+          return <li key={item.id}>
+            <span>
+              <a href={item.url}>{item.titulo}</a>
+            </span>
+            <span>
+              {item.autor}
+            </span>
+            <span>
+              {item.comentarios}
+            </span>
+            <span>
+              {item.pontos}
+            </span>        
+            
+               {item.titulo}</li>; 
         })}
       </ul>
 
